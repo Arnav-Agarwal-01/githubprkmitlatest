@@ -2,6 +2,7 @@
 
 import ImageBackground from '../components/background';
 import { SplashCursor } from '@/components/ui/splash-cursor';
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -22,6 +23,14 @@ export default function Home() {
           <h3 className='text-3xl font-mono text-white/70 typing-line delay-2000 mt-4'>
             We know what's cooking , We know what's trending
           </h3>
+          <div className="mt-12 animate-fadeIn" style={{ animationDelay: '3s', animationFillMode: 'forwards' }}>
+            <Link 
+              href="/contact" 
+              className="inline-block px-8 py-4 text-xl font-mono text-white border-2 border-white/50 rounded-lg hover:bg-white/10 transition-all duration-300 ease-in-out transform hover:scale-105 backdrop-blur-sm"
+            >
+              Contact Us
+            </Link>
+          </div>
         </div>
       </div>
     </main>
@@ -116,6 +125,20 @@ if (typeof window !== 'undefined') {
       margin-left: 2px;
       animation: blink 1s infinite;
       color: white;
+    }
+  `, styleSheet.cssRules.length);
+
+  styleSheet.insertRule(`
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  `, styleSheet.cssRules.length);
+
+  styleSheet.insertRule(`
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-out forwards;
+      opacity: 0;
     }
   `, styleSheet.cssRules.length);
 }
