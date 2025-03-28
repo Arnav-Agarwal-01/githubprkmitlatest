@@ -30,6 +30,7 @@ __turbopack_esm__({
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/src/lib/utils.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
 ;
@@ -39,8 +40,10 @@ var _s = __turbopack_refresh__.signature();
 ;
 ;
 ;
+;
 function NavBar({ items, className }) {
     _s();
+    const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(items[0].name);
     const [isMobile, setIsMobile] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
@@ -58,44 +61,53 @@ function NavBar({ items, className }) {
         }
     }["NavBar.useEffect"], []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6", className),
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-[9999] mb-6 sm:pt-6 pointer-events-auto", className),
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "flex items-center gap-3 bg-background/10 border border-white backdrop-blur-lg py-1 px-1 rounded-full shadow-lg",
+            className: "flex items-center gap-3 bg-background/10 border border-white backdrop-blur-lg py-1 px-1 rounded-full shadow-lg relative pointer-events-auto",
             children: items.map((item)=>{
                 const Icon = item.icon;
                 const isActive = activeTab === item.name;
                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                     href: item.url,
-                    onClick: ()=>setActiveTab(item.name),
-                    className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors", "text-white hover:text-white", isActive && "bg-muted text-white" // Changed to white
+                    onClick: (e)=>{
+                        e.preventDefault();
+                        setActiveTab(item.name);
+                        router.push(item.url);
+                    },
+                    style: {
+                        position: 'relative',
+                        zIndex: 10000,
+                        pointerEvents: 'auto'
+                    },
+                    className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors z-10 pointer-events-auto", "text-white hover:text-white", isActive && "bg-muted text-white" // Changed to white
                     ),
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "hidden md:inline",
+                            className: "hidden md:inline z-10 relative",
                             children: item.name
                         }, void 0, false, {
                             fileName: "[project]/src/components/ui/tubelight-navbar.jsx",
-                            lineNumber: 46,
+                            lineNumber: 53,
                             columnNumber: 15
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "md:hidden",
+                            className: "md:hidden z-10 relative",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
                                 size: 18,
                                 strokeWidth: 2.5
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ui/tubelight-navbar.jsx",
-                                lineNumber: 48,
+                                lineNumber: 55,
                                 columnNumber: 17
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/ui/tubelight-navbar.jsx",
-                            lineNumber: 47,
+                            lineNumber: 54,
                             columnNumber: 15
                         }, this),
                         isActive && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                             layoutId: "lamp",
-                            className: "absolute inset-0 w-full bg-primary/10 rounded-full -z-10",
+                            className: "absolute inset-0 w-full bg-primary/10 rounded-full z-0",
                             initial: false,
                             transition: {
                                 type: "spring",
@@ -109,53 +121,57 @@ function NavBar({ items, className }) {
                                         className: "absolute w-12 h-6 bg-white/20 rounded-full blur-md -top-2 -left-2"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ui/tubelight-navbar.jsx",
-                                        lineNumber: 62,
+                                        lineNumber: 69,
                                         columnNumber: 21
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "absolute w-8 h-6 bg-white/20 rounded-full blur-md -top-1"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ui/tubelight-navbar.jsx",
-                                        lineNumber: 64,
+                                        lineNumber: 71,
                                         columnNumber: 21
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "absolute w-4 h-4 bg-white/20 rounded-full blur-sm top-0 left-2"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ui/tubelight-navbar.jsx",
-                                        lineNumber: 65,
+                                        lineNumber: 72,
                                         columnNumber: 21
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ui/tubelight-navbar.jsx",
-                                lineNumber: 60,
+                                lineNumber: 67,
                                 columnNumber: 19
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/ui/tubelight-navbar.jsx",
-                            lineNumber: 51,
+                            lineNumber: 58,
                             columnNumber: 17
                         }, this)
                     ]
                 }, item.name, true, {
                     fileName: "[project]/src/components/ui/tubelight-navbar.jsx",
-                    lineNumber: 37,
+                    lineNumber: 39,
                     columnNumber: 13
                 }, this);
             })
         }, void 0, false, {
             fileName: "[project]/src/components/ui/tubelight-navbar.jsx",
-            lineNumber: 30,
+            lineNumber: 32,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/ui/tubelight-navbar.jsx",
-        lineNumber: 25,
+        lineNumber: 27,
         columnNumber: 5
     }, this);
 }
-_s(NavBar, "MWM3wW3EaAeZuCYxV5e4CVlzyqs=");
+_s(NavBar, "X2AT+8e8qvfjZZSeu9qVL8wAmhE=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
+    ];
+});
 _c = NavBar;
 var _c;
 __turbopack_refresh__.register(_c, "NavBar");

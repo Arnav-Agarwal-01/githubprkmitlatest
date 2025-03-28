@@ -2,12 +2,14 @@
 import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { cn } from "@/lib/utils"
 
 export function NavBar({
   items,
   className
 }) {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState(items[0].name)
   const [isMobile, setIsMobile] = useState(false)
 
@@ -24,11 +26,11 @@ export function NavBar({
   return (
     <div
       className={cn(
-        "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6",
+        "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-[9999] mb-6 sm:pt-6 pointer-events-auto",
         className
       )}>
       <div
-        className="flex items-center gap-3 bg-background/10 border border-white backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
+        className="flex items-center gap-3 bg-background/10 border border-white backdrop-blur-lg py-1 px-1 rounded-full shadow-lg relative pointer-events-auto">
         {items.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.name
@@ -37,20 +39,25 @@ export function NavBar({
             <Link
               key={item.name}
               href={item.url}
-              onClick={() => setActiveTab(item.name)}
+              onClick={(e) => {
+                e.preventDefault();
+                setActiveTab(item.name);
+                router.push(item.url);
+              }}
+              style={{ position: 'relative', zIndex: 10000, pointerEvents: 'auto' }}
               className={cn(
-                "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
+                "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors z-10 pointer-events-auto",
                 "text-white hover:text-white", // Changed to white
                 isActive && "bg-muted text-white" // Changed to white
               )}>
-              <span className="hidden md:inline">{item.name}</span>
-              <span className="md:hidden">
+              <span className="hidden md:inline z-10 relative">{item.name}</span>
+              <span className="md:hidden z-10 relative">
                 <Icon size={18} strokeWidth={2.5} />
               </span>
               {isActive && (
                 <motion.div
                   layoutId="lamp"
-                  className="absolute inset-0 w-full bg-primary/10 rounded-full -z-10"
+                  className="absolute inset-0 w-full bg-primary/10 rounded-full z-0"
                   initial={false}
                   transition={{
                     type: "spring",
