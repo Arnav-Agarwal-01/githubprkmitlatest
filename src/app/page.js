@@ -2,7 +2,6 @@
 
 import ImageBackground from '../components/background';
 import { SplashCursor } from '@/components/ui/splash-cursor';
-import { ParticleButton } from '@/components/ui/particle-button';
 
 export default function Home() {
   return (
@@ -23,11 +22,6 @@ export default function Home() {
           <h3 className='text-3xl font-mono text-white/70 typing-line delay-2000 mt-4'>
             We know what's cooking , We know what's trending
           </h3>
-          <div className="mt-8">
-            <ParticleButton onClick={() => window.location.href = '/contact'} className="bg-white/20 hover:bg-white/30 text-white border border-white/50">
-              Sponsor our next event
-            </ParticleButton>
-          </div>
         </div>
       </div>
     </main>
