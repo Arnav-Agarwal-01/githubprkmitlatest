@@ -20,11 +20,6 @@ export function Navigation() {
       icon: Phone,
     },
     {
-      name: "Projects",
-      url: "/projects",
-      icon: Mail,
-    },
-    {
       name: "Team",
       url: "/team",
       icon: User,

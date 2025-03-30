@@ -17,11 +17,11 @@ export default function Home() {
       <ImageBackground />
 
       {/* Foreground Content - Updated z-index and text color */}
-      <div style={styles.content} className='justify-center'>
-        <div className="typing-container flex flex-col">
-          <h1 className='text-8xl font-mono text-white typing-line'>PR KMIT</h1>
-          <h3 className='text-3xl font-mono text-white/70 typing-line delay-2000 mt-4'>
-            We know what's cooking , We know what's trending
+      <div style={styles.content} className='justify-center w-full flex items-center'>
+        <div className="typing-container flex flex-col w-full max-w-full px-2 xs:px-3 sm:px-6 md:px-8 mx-auto overflow-hidden">
+          <h1 className='text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-mono text-white typing-line'>PR KMIT</h1>
+          <h3 className='text-xs xs:text-sm sm:text-base md:text-xl lg:text-2xl font-mono text-white/70 typing-line delay-2000 mt-2 sm:mt-4 px-1 sm:px-2 md:px-0 leading-relaxed max-w-full break-words hyphens-auto'>
+            We know what's cooking, We know what's trending
           </h3>
           <div className="mt-12 animate-fadeIn" style={{ animationDelay: '3s', animationFillMode: 'forwards' }}>
             <Link 
@@ -73,6 +73,11 @@ const styles = {
     transform: 'translateY(-50%)',
     textAlign: 'center',
     padding: '20px',
+    width: '100%',
+    maxWidth: '100vw',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   carouselSection: {
     height: '100vh',

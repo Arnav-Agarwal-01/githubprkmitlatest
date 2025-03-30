@@ -120,7 +120,7 @@ const MediaItem = ({
             // Alt text for the image
             alt={item.title}
             // Style the image
-            className={`${className} object-cover cursor-pointer`}
+            className={`${className} object-cover`}
             // Trigger onClick when the image is clicked
             onClick={onClick}
             // Lazy load the image for performance
@@ -231,7 +231,7 @@ const GalleryModal = ({
                 <motion.div
                     className="relative rounded-xl bg-sky-400/20 backdrop-blur-xl 
                              border border-blue-400/30 shadow-lg
-                             cursor-grab active:cursor-grabbing">
+                             ">
                     <div className="flex items-center -space-x-2 px-3 py-2">
                         {mediaItems.map((item, index) => (
                             <motion.div
@@ -247,7 +247,7 @@ const GalleryModal = ({
                                     relative group
                                     w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 flex-shrink-0 
                                     rounded-lg overflow-hidden 
-                                    cursor-pointer hover:z-20
+                                    hover:z-20
                                     ${selectedItem.id === item.id
                                         ? 'ring-2 ring-white/70 shadow-lg'
                                         : 'hover:ring-2 hover:ring-white/30'}
@@ -295,12 +295,11 @@ const InteractiveBentoGallery = ({ mediaItems, title, description }) => {
     const [isDragging, setIsDragging] = useState(false);
 
     return (
-        <div className="container mx-auto px-4 py-8 max-w-4xl">
+        <div className="container mx-auto px-4 py-12 max-w-7xl">
             <div className="mb-8 text-center">
                 <motion.h1
                     className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent 
-                             bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900
-                             dark:from-white dark:via-gray-200 dark:to-white"
+                             bg-gradient-to-r from-white via-gray-200 to-white"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}>
@@ -324,7 +323,7 @@ const InteractiveBentoGallery = ({ mediaItems, title, description }) => {
                         mediaItems={items} />
                 ) : (
                     <motion.div
-                        className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-3 auto-rows-[60px]"
+                        className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-5 auto-rows-[100px]"
                         initial="hidden"
                         animate="visible"
                         exit="hidden"
@@ -339,7 +338,7 @@ const InteractiveBentoGallery = ({ mediaItems, title, description }) => {
                             <motion.div
                                 key={item.id}
                                 layoutId={`media-${item.id}`}
-                                className={`relative overflow-hidden rounded-xl cursor-move ${item.span}`}
+                                className={`relative overflow-hidden rounded-xl ${item.span} cursor-grab active:cursor-grabbing`}
                                 onClick={() => !isDragging && setSelectedItem(item)}
                                 variants={{
                                     hidden: { y: 50, scale: 0.9, opacity: 0 },
@@ -355,14 +354,16 @@ const InteractiveBentoGallery = ({ mediaItems, title, description }) => {
                                         }
                                     }
                                 }}
-                                whileHover={{ scale: 1.02 }}
-                                drag
-                                dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-                                dragElastic={1}
+                                whileHover={{ scale: 1.02, zIndex: 20 }}
+                                drag={true}
+                                dragConstraints={{ left: -150, right: 150, top: -150, bottom: 150 }}
+                                dragElastic={0.1}
+                                dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+                                whileDrag={{ scale: 1.08, zIndex: 30, boxShadow: "0 10px 25px rgba(0,0,0,0.2)" }}
                                 onDragStart={() => setIsDragging(true)}
                                 onDragEnd={(e, info) => {
                                     setIsDragging(false);
-                                    const moveDistance = info.offset.x + info.offset.y;
+                                    const moveDistance = Math.sqrt(Math.pow(info.offset.x, 2) + Math.pow(info.offset.y, 2));
                                     if (Math.abs(moveDistance) > 50) {
                                         const newItems = [...items];
                                         const draggedItem = newItems[index];
@@ -373,7 +374,8 @@ const InteractiveBentoGallery = ({ mediaItems, title, description }) => {
                                         newItems.splice(targetIndex, 0, draggedItem);
                                         setItems(newItems);
                                     }
-                                }}>
+                                }}
+                            >
                                 <MediaItem
                                     item={item}
                                     className="absolute inset-0 w-full h-full"
@@ -382,16 +384,15 @@ const InteractiveBentoGallery = ({ mediaItems, title, description }) => {
                                     className="absolute inset-0 flex flex-col justify-end p-2 sm:p-3 md:p-4"
                                     initial={{ opacity: 0 }}
                                     whileHover={{ opacity: 1 }}
-                                    transition={{ duration: 0.2 }}>
-                                    <div className="absolute inset-0 flex flex-col justify-end p-2 sm:p-3 md:p-4">
-                                        <div
-                                            className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                                    transition={{ duration: 0.2, ease: "easeOut" }}>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10" />
+                                    <div className="relative z-20 p-2 sm:p-3 md:p-4">
                                         <h3
-                                            className="relative text-white text-xs sm:text-sm md:text-base font-medium line-clamp-1">
+                                            className="text-white text-xs sm:text-sm md:text-base font-medium line-clamp-1">
                                             {item.title}
                                         </h3>
                                         <p
-                                            className="relative text-white/70 text-[10px] sm:text-xs md:text-sm mt-0.5 line-clamp-2">
+                                            className="text-white/70 text-[10px] sm:text-xs md:text-sm mt-0.5 line-clamp-2">
                                             {item.desc}
                                         </p>
                                     </div>

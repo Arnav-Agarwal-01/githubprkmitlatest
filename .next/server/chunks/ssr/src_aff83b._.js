@@ -1132,12 +1132,12 @@ function Home() {
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 style: styles.content,
-                className: "justify-center",
+                className: "justify-center w-full flex items-center",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "typing-container flex flex-col",
+                    className: "typing-container flex flex-col w-full max-w-full px-2 xs:px-3 sm:px-6 md:px-8 mx-auto overflow-hidden",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: "text-8xl font-mono text-white typing-line",
+                            className: "text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-mono text-white typing-line",
                             children: "PR KMIT"
                         }, void 0, false, {
                             fileName: "[project]/src/app/page.js",
@@ -1145,8 +1145,8 @@ function Home() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                            className: "text-3xl font-mono text-white/70 typing-line delay-2000 mt-4",
-                            children: "We know what's cooking , We know what's trending"
+                            className: "text-xs xs:text-sm sm:text-base md:text-xl lg:text-2xl font-mono text-white/70 typing-line delay-2000 mt-2 sm:mt-4 px-1 sm:px-2 md:px-0 leading-relaxed max-w-full break-words hyphens-auto",
+                            children: "We know what's cooking, We know what's trending"
                         }, void 0, false, {
                             fileName: "[project]/src/app/page.js",
                             lineNumber: 23,
@@ -1225,7 +1225,12 @@ const styles = {
         top: '50%',
         transform: 'translateY(-50%)',
         textAlign: 'center',
-        padding: '20px'
+        padding: '20px',
+        width: '100%',
+        maxWidth: '100vw',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     carouselSection: {
         height: '100vh',

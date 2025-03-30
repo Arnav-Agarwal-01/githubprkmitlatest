@@ -144,7 +144,7 @@ const MediaItem = ({ item, className, onClick })=>{
         // Alt text for the image
         alt: item.title,
         // Style the image
-        className: `${className} object-cover cursor-pointer`,
+        className: `${className} object-cover`,
         // Trigger onClick when the image is clicked
         onClick: onClick,
         // Lazy load the image for performance
@@ -312,7 +312,7 @@ const GalleryModal = ({ selectedItem, isOpen, onClose, setSelectedItem, mediaIte
                 },
                 className: "fixed z-50 left-1/2 bottom-4 -translate-x-1/2 touch-none",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                    className: "relative rounded-xl bg-sky-400/20 backdrop-blur-xl  border border-blue-400/30 shadow-lg cursor-grab active:cursor-grabbing",
+                    className: "relative rounded-xl bg-sky-400/20 backdrop-blur-xl  border border-blue-400/30 shadow-lg ",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "flex items-center -space-x-2 px-3 py-2",
                         children: mediaItems.map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -327,7 +327,7 @@ const GalleryModal = ({ selectedItem, isOpen, onClose, setSelectedItem, mediaIte
                                     relative group
                                     w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 flex-shrink-0 
                                     rounded-lg overflow-hidden 
-                                    cursor-pointer hover:z-20
+                                    hover:z-20
                                     ${selectedItem.id === item.id ? 'ring-2 ring-white/70 shadow-lg' : 'hover:ring-2 hover:ring-white/30'}
                                 `,
                                 initial: {
@@ -411,13 +411,13 @@ const InteractiveBentoGallery = ({ mediaItems, title, description })=>{
     const [items, setItems] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(mediaItems);
     const [isDragging, setIsDragging] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "container mx-auto px-4 py-8 max-w-4xl",
+        className: "container mx-auto px-4 py-12 max-w-7xl",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "mb-8 text-center",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].h1, {
-                        className: "text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent  bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-white dark:via-gray-200 dark:to-white",
+                        className: "text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent  bg-gradient-to-r from-white via-gray-200 to-white",
                         initial: {
                             opacity: 0,
                             y: 20
@@ -452,7 +452,7 @@ const InteractiveBentoGallery = ({ mediaItems, title, description })=>{
                         children: description
                     }, void 0, false, {
                         fileName: "[project]/src/components/blocks/interactive-bento-gallery.jsx",
-                        lineNumber: 309,
+                        lineNumber: 308,
                         columnNumber: 17
                     }, this)
                 ]
@@ -471,10 +471,10 @@ const InteractiveBentoGallery = ({ mediaItems, title, description })=>{
                     mediaItems: items
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/interactive-bento-gallery.jsx",
-                    lineNumber: 319,
+                    lineNumber: 318,
                     columnNumber: 21
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                    className: "grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-3 auto-rows-[60px]",
+                    className: "grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-5 auto-rows-[100px]",
                     initial: "hidden",
                     animate: "visible",
                     exit: "hidden",
@@ -491,7 +491,7 @@ const InteractiveBentoGallery = ({ mediaItems, title, description })=>{
                     },
                     children: items.map((item, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
                             layoutId: `media-${item.id}`,
-                            className: `relative overflow-hidden rounded-xl cursor-move ${item.span}`,
+                            className: `relative overflow-hidden rounded-xl ${item.span} cursor-grab active:cursor-grabbing`,
                             onClick: ()=>!isDragging && setSelectedItem(item),
                             variants: {
                                 hidden: {
@@ -512,20 +512,30 @@ const InteractiveBentoGallery = ({ mediaItems, title, description })=>{
                                 }
                             },
                             whileHover: {
-                                scale: 1.02
+                                scale: 1.02,
+                                zIndex: 20
                             },
                             drag: true,
                             dragConstraints: {
-                                left: 0,
-                                right: 0,
-                                top: 0,
-                                bottom: 0
+                                left: -150,
+                                right: 150,
+                                top: -150,
+                                bottom: 150
                             },
-                            dragElastic: 1,
+                            dragElastic: 0.1,
+                            dragTransition: {
+                                bounceStiffness: 600,
+                                bounceDamping: 20
+                            },
+                            whileDrag: {
+                                scale: 1.08,
+                                zIndex: 30,
+                                boxShadow: "0 10px 25px rgba(0,0,0,0.2)"
+                            },
                             onDragStart: ()=>setIsDragging(true),
                             onDragEnd: (e, info)=>{
                                 setIsDragging(false);
-                                const moveDistance = info.offset.x + info.offset.y;
+                                const moveDistance = Math.sqrt(Math.pow(info.offset.x, 2) + Math.pow(info.offset.y, 2));
                                 if (Math.abs(moveDistance) > 50) {
                                     const newItems = [
                                         ...items
@@ -544,7 +554,7 @@ const InteractiveBentoGallery = ({ mediaItems, title, description })=>{
                                     onClick: ()=>!isDragging && setSelectedItem(item)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/blocks/interactive-bento-gallery.jsx",
-                                    lineNumber: 377,
+                                    lineNumber: 379,
                                     columnNumber: 33
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -556,59 +566,62 @@ const InteractiveBentoGallery = ({ mediaItems, title, description })=>{
                                         opacity: 1
                                     },
                                     transition: {
-                                        duration: 0.2
+                                        duration: 0.2,
+                                        ease: "easeOut"
                                     },
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "absolute inset-0 flex flex-col justify-end p-2 sm:p-3 md:p-4",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/blocks/interactive-bento-gallery.jsx",
-                                                lineNumber: 387,
-                                                columnNumber: 41
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                className: "relative text-white text-xs sm:text-sm md:text-base font-medium line-clamp-1",
-                                                children: item.title
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/blocks/interactive-bento-gallery.jsx",
-                                                lineNumber: 389,
-                                                columnNumber: 41
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "relative text-white/70 text-[10px] sm:text-xs md:text-sm mt-0.5 line-clamp-2",
-                                                children: item.desc
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/blocks/interactive-bento-gallery.jsx",
-                                                lineNumber: 393,
-                                                columnNumber: 41
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/components/blocks/interactive-bento-gallery.jsx",
-                                        lineNumber: 386,
-                                        columnNumber: 37
-                                    }, this)
-                                }, void 0, false, {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/blocks/interactive-bento-gallery.jsx",
+                                            lineNumber: 388,
+                                            columnNumber: 37
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "relative z-20 p-2 sm:p-3 md:p-4",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                    className: "text-white text-xs sm:text-sm md:text-base font-medium line-clamp-1",
+                                                    children: item.title
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/blocks/interactive-bento-gallery.jsx",
+                                                    lineNumber: 390,
+                                                    columnNumber: 41
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-white/70 text-[10px] sm:text-xs md:text-sm mt-0.5 line-clamp-2",
+                                                    children: item.desc
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/blocks/interactive-bento-gallery.jsx",
+                                                    lineNumber: 394,
+                                                    columnNumber: 41
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/src/components/blocks/interactive-bento-gallery.jsx",
+                                            lineNumber: 389,
+                                            columnNumber: 37
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/src/components/blocks/interactive-bento-gallery.jsx",
-                                    lineNumber: 381,
+                                    lineNumber: 383,
                                     columnNumber: 33
                                 }, this)
                             ]
                         }, item.id, true, {
                             fileName: "[project]/src/components/blocks/interactive-bento-gallery.jsx",
-                            lineNumber: 339,
+                            lineNumber: 338,
                             columnNumber: 29
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/components/blocks/interactive-bento-gallery.jsx",
-                    lineNumber: 326,
+                    lineNumber: 325,
                     columnNumber: 21
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/blocks/interactive-bento-gallery.jsx",
-                lineNumber: 317,
+                lineNumber: 316,
                 columnNumber: 13
             }, this)
         ]
@@ -1622,80 +1635,56 @@ function TeamPage() {
             id: 1,
             type: 'image',
             url: '/images/img1.jpeg',
-            title: 'Arjun Sharma',
-            desc: 'PR Head | Specializes in event management and media relations',
+            title: 'Rishi Krovvidi',
+            desc: 'PR Head ',
             span: 'row-span-2 col-span-1'
         },
         {
             id: 2,
             type: 'image',
             url: '/images/img2.jpeg',
-            title: 'Priya Patel',
-            desc: 'Social Media Manager | Creates engaging content for all platforms',
+            title: 'Vardaan Arora Bhatia',
+            desc: 'WebDev , Spons Manager , Video Editor',
             span: 'row-span-1 col-span-1'
         },
         {
             id: 3,
             type: 'image',
             url: '/images/img3.jpeg',
-            title: 'Rahul Verma',
-            desc: 'Content Writer | Crafts compelling stories and press releases',
+            title: 'Sandeep Ade',
+            desc: 'Graphic Designer',
             span: 'row-span-2 col-span-1'
         },
         {
             id: 4,
             type: 'image',
             url: '/images/img4.jpeg',
-            title: 'Ananya Desai',
-            desc: 'Graphic Designer | Creates visual assets for campaigns',
+            title: 'Nithya Reddy',
+            desc: 'Social Media Handler',
             span: 'row-span-1 col-span-2'
         },
         {
             id: 5,
             type: 'image',
             url: '/images/img5.jpeg',
-            title: 'Vikram Singh',
-            desc: 'Photographer | Captures moments at all college events',
+            title: 'Jishnu Attanti',
+            desc: 'Content Creator',
             span: 'row-span-1 col-span-1'
         },
         {
             id: 6,
             type: 'image',
             url: '/images/img6.jpeg',
-            title: 'Neha Gupta',
-            desc: 'Event Coordinator | Manages logistics for PR activities',
+            title: 'Akshaya Pothani',
+            desc: 'Documentation Incharge',
             span: 'row-span-2 col-span-1'
         },
         {
             id: 7,
             type: 'image',
             url: '/images/img7.jpeg',
-            title: 'Karan Malhotra',
-            desc: 'Video Editor | Creates promotional videos and reels',
-            span: 'row-span-1 col-span-1'
-        },
-        {
-            id: 8,
-            type: 'image',
-            url: '/images/img8.jpeg',
-            title: 'Riya Kapoor',
-            desc: 'Public Relations Officer | Handles external communications',
-            span: 'row-span-1 col-span-2'
-        },
-        {
-            id: 9,
-            type: 'image',
-            url: '/images/img9.jpeg',
-            title: 'Aditya Kumar',
-            desc: 'Digital Marketing Specialist | Manages online campaigns',
-            span: 'row-span-2 col-span-1'
-        },
-        {
-            id: 10,
-            type: 'image',
-            url: '/images/img10.jpeg',
-            title: 'Shreya Reddy',
-            desc: 'Community Manager | Builds relationships with student body',
+            title: 'Sreekruthi',
+            desc: 'Content Creator',
             span: 'row-span-1 col-span-1'
         }
     ];
@@ -1712,18 +1701,18 @@ function TeamPage() {
                 COLOR_UPDATE_SPEED: 15
             }, void 0, false, {
                 fileName: "[project]/src/app/team/page.js",
-                lineNumber: 95,
+                lineNumber: 71,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "pt-24 pb-8 px-4 text-center",
+                className: "pt-32 pb-8 px-4 text-center",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                         className: "text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 mb-4",
                         children: "Meet Our Team"
                     }, void 0, false, {
                         fileName: "[project]/src/app/team/page.js",
-                        lineNumber: 103,
+                        lineNumber: 79,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1731,13 +1720,13 @@ function TeamPage() {
                         children: "The creative minds behind PR KMIT, working together to showcase the best of our college"
                     }, void 0, false, {
                         fileName: "[project]/src/app/team/page.js",
-                        lineNumber: 106,
+                        lineNumber: 82,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/team/page.js",
-                lineNumber: 102,
+                lineNumber: 78,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1748,52 +1737,18 @@ function TeamPage() {
                     description: "Drag, click, and interact with our team gallery"
                 }, void 0, false, {
                     fileName: "[project]/src/app/team/page.js",
-                    lineNumber: 113,
+                    lineNumber: 89,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/team/page.js",
-                lineNumber: 112,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "max-w-4xl mx-auto px-4 py-12 text-center",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-2xl font-semibold mb-4",
-                        children: "Join Our Team"
-                    }, void 0, false, {
-                        fileName: "[project]/src/app/team/page.js",
-                        lineNumber: 122,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-gray-300 mb-6",
-                        children: "Interested in being part of PR KMIT? We're always looking for creative and passionate individuals to join our team."
-                    }, void 0, false, {
-                        fileName: "[project]/src/app/team/page.js",
-                        lineNumber: 123,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                        href: "/contact",
-                        className: "inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300",
-                        children: "Get in Touch"
-                    }, void 0, false, {
-                        fileName: "[project]/src/app/team/page.js",
-                        lineNumber: 126,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/app/team/page.js",
-                lineNumber: 121,
+                lineNumber: 88,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/team/page.js",
-        lineNumber: 93,
+        lineNumber: 69,
         columnNumber: 5
     }, this);
 }
