@@ -17,7 +17,7 @@ function page() {
       </div>
       
       <div className="absolute inset-0 flex items-center justify-center p-4 pt-24 md:pt-32">
-        <div className="relative z-[1000] w-full max-w-5xl">
+        <div className="w-full max-w-7xl mx-auto">
           <FocusCards cards={cards} />
         </div>
       </div>
