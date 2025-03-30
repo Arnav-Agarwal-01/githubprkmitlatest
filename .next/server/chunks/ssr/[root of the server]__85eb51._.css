@@ -743,6 +743,14 @@ body {
   height: 100vh;
 }
 
+.h-64 {
+  height: 16rem;
+}
+
+.h-80 {
+  height: 20rem;
+}
+
 .max-h-\[30rem\] {
   max-height: 30rem;
 }
@@ -1328,6 +1336,11 @@ body {
   padding-bottom: .75rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .pb-20 {
   padding-bottom: 5rem;
 }
@@ -1904,6 +1917,11 @@ body {
     font-size: .75rem;
     line-height: 1rem;
   }
+
+  .sm\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
 
 @media (width >= 768px) {
@@ -1965,6 +1983,10 @@ body {
 
   .md\:h-\[600px\] {
     height: 600px;
+  }
+
+  .md\:h-80 {
+    height: 20rem;
   }
 
   .md\:w-10 {
